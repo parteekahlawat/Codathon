@@ -5,7 +5,6 @@ import Moodinput from './templates/moodpage';
 function App() {
   return (
     <>
-
     <Routes>
     <Route  path="/" element={<SignInPage title="Sutherland"/>}/>
       <Route  path="/moodpage" element={<Moodinput/>}/>
