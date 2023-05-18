@@ -17,6 +17,8 @@ function App() {
         >
           Learn React
         </a>
+<ActivitySelectionPage />
+            <MoodOMeter />
       </header>
     </div>
   );
