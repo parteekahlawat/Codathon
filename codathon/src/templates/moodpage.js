@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function MoodDetector() {
     const [mood, setMood] = useState('');
+    const navigate = useNavigate();
   
     const handleMoodSelect = (selectedMood) => {
       setMood(selectedMood);
+      navigate("/moodoptions");
     };
   
   const emojiList = [
     '😃', '😔', '😍', '😎', '😂',
     '😊', '😢', '🥰', '😞', '😭', '😌', '🙃'
   ];
+
   
     const column1 = emojiList.slice(0, emojiList.length / 3);
     const column2 = emojiList.slice(emojiList.length / 3, (emojiList.length / 3) * 2);
