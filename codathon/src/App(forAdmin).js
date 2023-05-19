@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="App">
       {/* <ActivitySelectionPage /> */}
-      <LineGraph />
+      {/* <LineGraph /> */}
       {/* {<RadialChart />} */}
       {/* <LoginPage /> */}
       {/* <EmployeeTable /> */}
