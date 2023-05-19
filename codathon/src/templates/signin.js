@@ -25,9 +25,12 @@ function SignInPage(props) {
     //signin redirect
     if (username === 'Admin' && password === '12345') {
         // Successful sign-in
-        console.log('Sign-in successful');
-        navigate("/moodpage")
+        console.log('Sign-in successful as Admin');
+        navigate("/connectpage")
         // Add your code for redirecting to the next page
+      }else if(username === 'Employee' && password === 'abcde')  {
+        console.log('Sign-in successful as Employee');
+        navigate("/moodpage")
       } else {
         // Invalid credentials
         setErrorMessage('Invalid username or password');

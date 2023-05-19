@@ -6,7 +6,7 @@ function RatingPage() {
   const navigate = useNavigate();
   const handleRatingChange = (value) => {
     setRating(value);
-    navigate("/moodreason");
+    navigate("/moodoptions");
   };
 
   const emoji = '😃';

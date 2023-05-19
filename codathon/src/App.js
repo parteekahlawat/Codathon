@@ -6,10 +6,14 @@ import MoodPage from "./templates/moodpage";
 import MoodRating from "./templates/moodrating";
 import MoodReason from "./templates/moodreason";
 import MoodOptions from "./templates/moodoptions";
+import Navbar from "./templates/navbar";
+import Linegraph from "./templates/linegraph";
+import App1 from './templates/connectpage';
 // import Graphpage from "./templates/graphpage";
 function App() {
   return (
     <>
+    <Navbar/>
       <Routes>
         <Route path="/" element={<SignInPage title="Sutherland" />} />
         <Route
@@ -30,11 +34,18 @@ function App() {
           path="/moodreason"
           element={
             <MoodReason/>
-            // <MoodOptions
-            //   mood={mood}
-            //   rating={rating}
-            //   onSubmit={handleMoodSubmit}
-            // />
+          }
+          />
+          <Route
+          path="/linegraph"
+          element={
+            <Linegraph/>
+          }
+        />
+        <Route
+          path="/connectpage"
+          element={
+            <App1/>
           }
         />
       </Routes>

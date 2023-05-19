@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import MoodDetector from './moodpage';
+
+
 function MoodReasonPage({ mood, rating, onSubmit }) {
   const [selectedReasons, setSelectedReasons] = useState([]);
   const navigate = useNavigate();
@@ -26,14 +29,14 @@ function MoodReasonPage({ mood, rating, onSubmit }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     // onSubmit(selectedReasons);
-    navigate("/moodrating");
+    navigate("/moodreason");
   };
 
   return (
     <div className="container">
       <h2>Reasons for Your Mood</h2>
       <div className="previous-info">
-        <p>Mood: {mood}</p>
+        <p>Mood: {MoodDetector}</p>
         <p>Rating: {rating}</p>
       </div>
       <form onSubmit={handleSubmit}>

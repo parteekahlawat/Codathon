@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 function MoodReasonPage({ mood, rating }) {
   const [reason, setReason] = useState('');
   const navigate = useNavigate();
+
+  // Function to handle mood selection
+
+  // Function to handle rating selection
   const handleReasonChange = (event) => {
     setReason(event.target.value);
   };

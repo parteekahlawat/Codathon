@@ -7,7 +7,7 @@ function MoodDetector() {
   
     const handleMoodSelect = (selectedMood) => {
       setMood(selectedMood);
-      navigate("/moodoptions");
+      navigate("/moodrating");
     };
   
   const emojiList = [
@@ -121,3 +121,4 @@ function MoodDetector() {
 }
   
 export default MoodDetector;  
+
