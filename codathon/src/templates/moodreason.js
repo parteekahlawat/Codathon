@@ -1,47 +1,26 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function MoodReasonPage({ mood, rating }) {
+function MoodReasonPage() {
   const [reason, setReason] = useState('');
   const navigate = useNavigate();
 
-  // Function to handle mood selection
-
-  // Function to handle rating selection
   const handleReasonChange = (event) => {
     setReason(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Mood:', mood);
-    console.log('Rating:', rating);
+
     console.log('Reason:', reason);
     window.alert('Successfully Submitted!!');
-    navigate("/");
-  };
-
-  const getBackgroundColor = () => {
-    switch (mood) {
-      case '😃':
-        return '#FFD700'; // Yellow
-      case '😔':
-        return '#4285F4'; // Blue
-      case '😊':
-        return '#FF4081'; // Pink
-      default:
-        return '#f5f5f5'; // Default background color
-    }
+    navigate("/advice");
   };
 
   return (
-    <div className="container" style={{ backgroundColor: getBackgroundColor() }}>
+    <div className="container">
       <div className="content">
         <h2>Share the Reason for Your Mood</h2>
-        <div className="previous-info">
-          <p>Mood: {mood}</p>
-          <p>Rating: {rating}</p>
-        </div>
         <form onSubmit={handleSubmit}>
           <textarea
             className="reason-input"
@@ -61,6 +40,7 @@ function MoodReasonPage({ mood, rating }) {
           align-items: center;
           justify-content: center;
           height: 100vh;
+          background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
         }
 
         .content {
@@ -68,17 +48,14 @@ function MoodReasonPage({ mood, rating }) {
           border-radius: 10px;
           padding: 30px;
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+          max-width: 400px;
+          width: 100%;
         }
 
         h2 {
           font-size: 24px;
           margin-bottom: 20px;
           color: #333;
-          text-align: center;
-        }
-
-        .previous-info {
-          margin-bottom: 20px;
           text-align: center;
         }
 

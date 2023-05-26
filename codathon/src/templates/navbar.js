@@ -1,14 +1,14 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav style={navbarStyles}>
-      <a href="#" style={logoStyles}>Logo</a>
+      <Link to="/" style={logoStyles}>Sutherland</Link>
       <ul style={menuStyles}>
-        <li><a href="#" style={linkStyles}>Home</a></li>
-        <li><a href="#" style={linkStyles}>About</a></li>
-        <li><a href="#" style={linkStyles}>Services</a></li>
-        <li><a href="#" style={linkStyles}>Contact</a></li>
+        <li><Link to="/" style={linkStyles}>Home</Link></li>
+        <li><Link to="/" style={linkStyles}>About</Link></li>
+        <li><Link to="/" style={linkStyles}>Services</Link></li>
+        <li><Link to="/" style={linkStyles}>Contact</Link></li>
       </ul>
     </nav>
   );
@@ -18,11 +18,11 @@ const navbarStyles = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  background: "linear-gradient(to right, #4b6cb7, #182848)",
+  background: "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
   padding: "10px",
   boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
-  borderRadius: "5px",
-  margin: "10px 20px", // Increased horizontal margins
+  borderRadius: "0px",
+  margin: "0px", // Increased horizontal margins
 };
 
 const logoStyles = {
@@ -32,7 +32,7 @@ const logoStyles = {
   textDecoration: "none",
   fontFamily: "Arial, sans-serif",
   textShadow: "2px 2px 4px rgba(0, 0, 0, 0.3)",
-  margin: "0 10px 0 0",
+  padding: "15px", // Increased padding
 };
 
 const menuStyles = {

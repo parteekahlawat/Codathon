@@ -38,7 +38,19 @@ function RadialChart() {
   };
 
   return (
-    <div style={{ height: "200px", width: "200px", alignItems: "center" }}>
+    <div
+      style={{
+        height: "200px",
+        width: "200px",
+        margin: "20px",
+        padding: "10px",
+        border: "1px solid #ccc",
+        borderRadius: "5px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+      }}
+    >
       <Doughnut
         data={data}
         options={options}

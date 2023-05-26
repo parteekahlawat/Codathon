@@ -9,7 +9,8 @@ import MoodOptions from "./templates/moodoptions";
 import Navbar from "./templates/navbar";
 import Linegraph from "./templates/linegraph";
 import App1 from './templates/connectpage';
-// import Graphpage from "./templates/graphpage";
+import ThankYouPage from "./templates/thankyou";
+import DialingPad from "./templates/dialingpad";
 function App() {
   return (
     <>
@@ -19,6 +20,10 @@ function App() {
         <Route
           path="/moodpage"
           element={<MoodPage/>}
+        />
+        <Route
+          path="/thankyou"
+          element={<ThankYouPage/>}
         />
         <Route
           path="/moodoptions"
@@ -48,6 +53,12 @@ function App() {
             <App1/>
           }
         />
+        <Route
+          path="/advice"
+          element={
+              <DialingPad/>
+          }
+          />
       </Routes>
     </>
   );

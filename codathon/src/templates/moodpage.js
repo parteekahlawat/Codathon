@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function MoodDetector() {
-    const [mood, setMood] = useState('');
-    const navigate = useNavigate();
-  
-    const handleMoodSelect = (selectedMood) => {
-      setMood(selectedMood);
-      navigate("/moodrating");
-    };
-  
+  const [mood, setMood] = useState('');
+  const navigate = useNavigate();
+
+  const handleMoodSelect = (selectedMood) => {
+    setMood(selectedMood);
+    navigate("/moodrating", { state: { mood: selectedMood } });
+  };
   const emojiList = [
     '😃', '😔', '😍', '😎', '😂',
     '😊', '😢', '🥰', '😞', '😭', '😌', '🙃'
@@ -71,13 +70,13 @@ function MoodDetector() {
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f5f5f5;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
           }
   
           h2 {
             font-size: 24px;
             margin-bottom: 20px;
-            color: #333;
+            color: #fff;
           }
   
           .emojis {

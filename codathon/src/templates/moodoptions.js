@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import MoodDetector from './moodpage';
 
-
-function MoodReasonPage({ mood, rating, onSubmit }) {
+function MoodReasonPage() {
   const [selectedReasons, setSelectedReasons] = useState([]);
   const navigate = useNavigate();
   const reasons = [
@@ -17,6 +15,13 @@ function MoodReasonPage({ mood, rating, onSubmit }) {
     'Hobbies',
     'Other',
   ];
+
+  const getRandomImageUrl = () => {
+    const width = 800;
+    const height = 600;
+    const randomId = Math.floor(Math.random() * 1000);
+    return `https://picsum.photos/id/${randomId}/${width}/${height}`;
+  };
 
   const handleReasonSelect = (reason) => {
     if (selectedReasons.includes(reason)) {
@@ -35,19 +40,18 @@ function MoodReasonPage({ mood, rating, onSubmit }) {
   return (
     <div className="container">
       <h2>Reasons for Your Mood</h2>
-      <div className="previous-info">
-        <p>Mood: {MoodDetector}</p>
-        <p>Rating: {rating}</p>
-      </div>
       <form onSubmit={handleSubmit}>
         <div className="reasons-container">
-          {reasons.map((reason) => (
+          {reasons.map((reason, index) => (
             <div
-              key={reason}
+              key={index}
               className={`reason ${selectedReasons.includes(reason) ? 'selected' : ''}`}
               onClick={() => handleReasonSelect(reason)}
+              style={{
+                backgroundImage: `url(${getRandomImageUrl()})`,
+              }}
             >
-              {reason}
+              <span className="reason-text">{reason}</span>
             </div>
           ))}
         </div>
@@ -59,80 +63,88 @@ function MoodReasonPage({ mood, rating, onSubmit }) {
       </form>
 
       <style jsx>{`
-        .container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
-          background-color: #f2f2f2;
-          background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
-          padding: 20px;
-        }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  padding: 20px;
+}
 
-        h2 {
-          font-size: 28px;
-          margin-bottom: 20px;
-          color: #333;
-          text-align: center;
-        }
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
 
-        .previous-info {
-          margin-bottom: 20px;
-          text-align: center;
-        }
+.reasons-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
 
-        .reasons-container {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          grid-gap: 20px;
-          margin-bottom: 20px;
-        }
+.reason {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #333;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  background-size: cover;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
 
-        .reason {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 100px;
-          font-size: 18px;
-          color: #333;
-          background-color: #fff;
-          border: 2px solid #ccc;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: background-color 0.2s ease-in-out;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
+.reason.selected {
+  background-color: #FFD700;
+  color: #fff;
+  border-color: #FFD700;
+}
 
-        .reason.selected {
-          background-color: #FFD700;
-          color: #fff;
-          border-color: #FFD700;
-        }
+.reason-text {
+  font-weight: bold;
+}
 
-        .submit-container {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+.reason.selected {
+  background-color: #FFD700;
+  color: #fff;
+  border-color: #FFD700;
+}
 
-        .submit-button {
-          padding: 10px 20px;
-          font-size: 18px;
-          background-color: #FFD700;
-          color: #333;
-          border: none;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: background-color 0.2sease-in-out;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-          }
-          .submit-button:hover {
-            background-color: #ffc700;
-          }
-        `}</style>
-      </div>
-      );
-    }
-    
-    export default MoodReasonPage;          
+.submit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #FFD700;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:hover {
+  background-color: #ffc700;
+}
+`}</style>
+    </div>
+  );
+}
+
+export default MoodReasonPage;
+

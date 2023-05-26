@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 function RatingPage() {
   const [rating, setRating] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const selectedMood = location.state?.mood;
   const handleRatingChange = (value) => {
     setRating(value);
     navigate("/moodoptions");
-  };
 
-  const emoji = '😃';
+  };
+  useEffect(() => {
+    if (!selectedMood) {
+      navigate("/moodoptions"); // Redirect to mood options if no mood selected
+    }
+  }, [navigate, selectedMood]);
 
   const renderRatingButtons = () => {
     const ratingButtons = [];
@@ -32,10 +38,9 @@ function RatingPage() {
   return (
     <div className="container">
       <h2>Strength Of Emotions</h2>
-      <div className="emoji">{emoji}</div>
+      <div className="emoji">{selectedMood}</div>
       <div className="rating-buttons">{renderRatingButtons()}</div>
       {rating && <div className="selected-rating">Your rating: {rating}</div>}
-
       <style jsx>{`
         .container {
           display: flex;
@@ -43,13 +48,13 @@ function RatingPage() {
           align-items: center;
           justify-content: center;
           height: 100vh;
-          background-color: #f5f5f5;
+          background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
         }
 
         h2 {
-          font-size: 24px;
+          font-size: 30px;
           margin-bottom: 20px;
-          color: #333;
+          color: #fff;
         }
 
         .emoji {
@@ -90,5 +95,4 @@ function RatingPage() {
     </div>
   );
 }
-
 export default RatingPage;

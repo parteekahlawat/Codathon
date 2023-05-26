@@ -77,14 +77,15 @@ function LineGraph() {
     imageSrc:
       "https://th.bing.com/th/id/OIP.MUmC68GZwocme21JbL8teAHaJ3?pid=ImgDet&w=901&h=1200&rs=1"
   };
+
   return (
-    <div>
-      <div style={{ textAlign: "center", marginBottom: "20px" }}>
+    <div style={containerStyle}>
+      <div style={employeeInfoStyle}>
         <h2>{employee.name}</h2>
         <img
           src={employee.imageSrc}
           alt={employee.name}
-          style={{ width: "150px", height: "150px", borderRadius: "50%" }}
+          style={imageStyle}
         />
         <p>{employee.designation}</p>
       </div>
@@ -92,5 +93,23 @@ function LineGraph() {
     </div>
   );
 }
+
+const containerStyle = {
+  maxWidth: "800px",
+  margin: "0 auto",
+  padding: "20px"
+};
+
+const employeeInfoStyle = {
+  textAlign: "center",
+  marginBottom: "20px"
+};
+
+const imageStyle = {
+  width: "150px",
+  height: "150px",
+  borderRadius: "50%",
+  objectFit: "cover"
+};
 
 export default LineGraph;
