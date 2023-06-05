@@ -28,3 +28,11 @@ you will be directed to our MoodOMeter where you will have to choose your emotio
 
 '**The SignIn page is as**'
 ![Screenshot 2023-06-05 184050](https://github.com/parteekahlawat/Codathon/assets/72187356/04f12914-5208-4806-b0d0-c0917f8afaef)
+
+For viewing Employee side - 
+Id: Employee
+Password: abcde
+
+For viewing Admin side - 
+Id: Admin
+Password: 12345
