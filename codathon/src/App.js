@@ -16,7 +16,7 @@ function App() {
     <>
     <Navbar/>
       <Routes>
-        <Route path="/" element={<SignInPage title="Sutherland" />} />
+        <Route path="/Codathon" element={<SignInPage title="Sutherland" />} />
         <Route
           path="/moodpage"
           element={<MoodPage/>}
