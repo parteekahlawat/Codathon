@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Codathon/static/css/main.431f06a6.css",
+    "main.js": "/Codathon/static/js/main.1201e224.js",
+    "static/js/787.8aaa0022.chunk.js": "/Codathon/static/js/787.8aaa0022.chunk.js",
+    "index.html": "/Codathon/index.html",
+    "main.431f06a6.css.map": "/Codathon/static/css/main.431f06a6.css.map",
+    "main.1201e224.js.map": "/Codathon/static/js/main.1201e224.js.map",
+    "787.8aaa0022.chunk.js.map": "/Codathon/static/js/787.8aaa0022.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.431f06a6.css",
+    "static/js/main.1201e224.js"
+  ]
+}
