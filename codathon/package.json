@@ -1,5 +1,6 @@
 {
   "name": "codathon",
+  "homepage": "https://parteekahlawat.github.io/Codathon/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +11,7 @@
     "chartjs-plugin-annotation": "^1.1.0",
     "chartjs-plugin-datalabels": "^2.2.0",
     "emojione": "^4.5.0",
+    "gh-pages": "^5.0.0",
     "history": "^5.3.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
@@ -24,6 +26,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
